@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
+      flash[:notice] = "User was successfully created."
       redirect_to root_path
       else
        render :new  

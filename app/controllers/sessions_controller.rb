@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 
     if @user.present? && @user.authenticate(params[:password])
        session[:user_id] = @user.id
+       flash[:notice] = "Login successful."
        redirect_to root_path
     else
         render :new
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    flash[:notice] = "You have successfully logged out."
     redirect_to root_path
   end
 end
