@@ -1,2 +1,6 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% if @current_user %>
+  <%= link_to "Sign Out", logout_path,  'data-turbo-method': :delete %>
+<% else %>
+  <p><%= link_to "Sign up", sign_up_path %></p>
+  <p><%= link_to "Sign in", sign_in_path %></p>
+<% end %>
