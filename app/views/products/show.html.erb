@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @product %>
+<p><%= @product.title %></p>
+<p><%= @product.description %></p>
+<p><%= @product.price %></p>
+<p><%= @product.created_at %></p>
 
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
+  <%= link_to "Edit product", edit_product_path %> |
   <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+  <%= button_to "Delete", product_path, method: :delete %>
 </div>
