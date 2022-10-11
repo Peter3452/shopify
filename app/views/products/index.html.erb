@@ -1,8 +1,8 @@
 <h1>Products</h1>
 
 <% @products.each do |product| %>
-  <%= product.title %>
-  <%= product.price %>
+  <p><%= product.title %></p>
+  <p><%= product.price %></p>
   <p><%= link_to "Show this product", product %></p>
 <% end %>
 
