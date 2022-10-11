@@ -4,13 +4,12 @@ class CommentsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @comment = @product.comments.create(comments_params)
-    redirect_to product_path
+    redirect_to product_path(@product)
   end
   
   def edit;end
 
   def update
-
   end
 
   def destroy
@@ -20,4 +19,5 @@ class CommentsController < ApplicationController
 
   def comments_params
     params.require(:comment).permit(:name, :body)
+  end
 end

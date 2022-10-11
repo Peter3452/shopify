@@ -14,3 +14,10 @@
   <%= link_to "Back to products", products_path %>
   <%= button_to "Delete", product_path, method: :delete %>
 </div>
+
+<%= render 'comments/form' %>
+
+<% @product.comments.each do |comment| %>
+  <p><%=comment.name %></p>
+  <p><%=comment.body %></p>
+<% end %>
