@@ -48,15 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_174753) do
     t.index ["product_id"], name: "index_comments_on_product_id"
   end
 
-  create_table "product_comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.integer "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_comments_on_product_id"
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -76,5 +67,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_11_174753) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "products"
-  add_foreign_key "product_comments", "products"
 end
